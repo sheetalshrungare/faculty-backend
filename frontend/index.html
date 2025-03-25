@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Page</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        table { width: 80%; margin: 20px auto; border-collapse: collapse; }
+        th, td { border: 1px solid black; padding: 10px; }
+        th { background-color: maroon; color: white; }
+        img { width: 80px; height: 80px; border-radius: 50%; }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to the Department of English</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Designation</th>
+                <th>Qualifications</th>
+                <th>Teaching Experience</th>
+                <th>Corporate Experience</th>
+                <th>IMG</th>
+                <th>E-mail</th>
+            </tr>
+        </thead>
+        <tbody id="facultyTable"></tbody>
+    </table>
+
+    <script>
+        async function fetchFaculty() {
+            const response = await fetch("http://localhost:5000/faculty");
+            const data = await response.json();
+            const table = document.getElementById("facultyTable");
+            table.innerHTML = data.map(faculty => `
+                <tr>
+                    <td>${faculty.name}</td>
+                    <td>${faculty.designation}</td>
+                    <td>${faculty.qualifications}</td>
+                    <td>${faculty.teachingExperience}</td>
+                    <td>${faculty.corporateExperience}</td>
+                    <td><img src="${faculty.img}" alt="Faculty Image"></td>
+                    <td>${faculty.email}</td>
+                </tr>
+            `).join("");
+        }
+        fetchFaculty();
+    </script>
+
+</body>
+</html>

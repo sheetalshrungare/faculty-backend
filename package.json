@@ -1,0 +1,26 @@
+{
+  "name": "faculty-portal",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sheetalshrungare/faculty_portal.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sheetalshrungare/faculty_portal/issues"
+  },
+  "homepage": "https://github.com/sheetalshrungare/faculty_portal#readme",
+  "description": ""
+}
